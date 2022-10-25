@@ -1,0 +1,120 @@
+{
+    "nodes": [
+        {
+            "name": "A"
+        },
+        {
+            "name": "B"
+        },
+        {
+            "name": "C"
+        },
+        {
+            "name": "D"
+        },
+        {
+            "name": "E"
+        }
+    ],
+    "edges": [
+        {
+            "nodes": [
+                {
+                    "name": "A"
+                },
+                {
+                    "name": "B"
+                }
+            ],
+            "weight": 5
+        },
+        {
+            "nodes": [
+                {
+                    "name": "B"
+                },
+                {
+                    "name": "C"
+                }
+            ],
+            "weight": 4
+        },
+        {
+            "nodes": [
+                {
+                    "name": "C"
+                },
+                {
+                    "name": "D"
+                }
+            ],
+            "weight": 8
+        },
+        {
+            "nodes": [
+                {
+                    "name": "D"
+                },
+                {
+                    "name": "C"
+                }
+            ],
+            "weight": 8
+        },
+        {
+            "nodes": [
+                {
+                    "name": "D"
+                },
+                {
+                    "name": "E"
+                }
+            ],
+            "weight": 6
+        },
+        {
+            "nodes": [
+                {
+                    "name": "A"
+                },
+                {
+                    "name": "D"
+                }
+            ],
+            "weight": 5
+        },
+        {
+            "nodes": [
+                {
+                    "name": "C"
+                },
+                {
+                    "name": "E"
+                }
+            ],
+            "weight": 2
+        },
+        {
+            "nodes": [
+                {
+                    "name": "E"
+                },
+                {
+                    "name": "B"
+                }
+            ],
+            "weight": 3
+        },
+        {
+            "nodes": [
+                {
+                    "name": "A"
+                },
+                {
+                    "name": "E"
+                }
+            ],
+            "weight": 7
+        }
+    ]
+}

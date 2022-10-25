@@ -1,0 +1,59 @@
+{
+    "nodes": [
+        {
+            "name": "A"
+        },
+        {
+            "name": "B"
+        },
+        {
+            "name": "C"
+        }
+    ],
+    "edges": [
+        {
+            "nodes": [
+                {
+                    "name": "A"
+                },
+                {
+                    "name": "C"
+                }
+            ],
+            "weight": 20
+        },
+        {
+            "nodes": [
+                {
+                    "name": "C"
+                },
+                {
+                    "name": "A"
+                }
+            ],
+            "weight": 20
+        },
+        {
+            "nodes": [
+                {
+                    "name": "B"
+                },
+                {
+                    "name": "C"
+                }
+            ],
+            "weight": 20
+        },
+        {
+            "nodes": [
+                {
+                    "name": "C"
+                },
+                {
+                    "name": "B"
+                }
+            ],
+            "weight": 20
+        }
+    ]
+}
