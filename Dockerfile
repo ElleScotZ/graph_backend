@@ -13,9 +13,9 @@ RUN go mod download
 # Building a backend.exe in the /app directory
 RUN go build -o backend .
 
+EXPOSE 8080
+
 ENTRYPOINT [ "/app/backend" ]
 
-# EXPOSE 8080
-
-# Run backend.exe
-CMD [ "/app/backend" ]
+# # Run backend.exe
+# CMD [ "/app/backend" ]

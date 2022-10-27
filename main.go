@@ -339,5 +339,5 @@ func main() {
 	// Generating shoertest/longest paths
 	router.POST("/shortLong", getShortestLongestPath)
 
-	router.Run("localhost:8080")
+	router.Run("https://graphbackend.herokuapp.com/")
 }
