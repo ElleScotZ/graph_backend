@@ -318,14 +318,14 @@ func main() {
 	router := gin.Default()
 
 	// router.SetTrustedProxies([]string{"localhost"})
-	// router.Use(cors.Default())
+	router.Use(cors.Default())
 
-	router.Use(cors.New(cors.Config{
-		AllowOrigins: []string{"http://ellescotz.github.io/graph_backend"}, // Change this to the hosted React app's url.
-		AllowMethods: []string{"POST, OPTIONS"},
-		AllowHeaders: []string{"content-type"},
-		// AllowCredentials: true,
-	}))
+	// router.Use(cors.New(cors.Config{
+	// 	AllowOrigins: []string{"http://ellescotz.github.io/graph_backend"}, // Change this to the hosted React app's url.
+	// 	AllowMethods: []string{"POST, OPTIONS"},
+	// 	AllowHeaders: []string{"content-type"},
+	// 	// AllowCredentials: true,
+	// }))
 
 	// Generating all the paths with <= #steps
 	router.POST("/maxSteps", getPathsWithMaxSteps)
