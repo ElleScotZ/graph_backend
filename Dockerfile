@@ -8,7 +8,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN go mod download
+RUN go mod download && go mod verify
 
 # Building a backend.exe in the /app directory
 RUN go build -o backend .
@@ -18,4 +18,4 @@ EXPOSE 8080
 ENTRYPOINT [ "/app/backend" ]
 
 # # Run backend.exe
-# CMD [ "/app/backend" ]
+# CMD go run main.go

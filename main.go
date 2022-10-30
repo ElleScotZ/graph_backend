@@ -6,7 +6,6 @@ import (
 	"strconv"
 
 	"github.com/ellescotz/graph_backend/pkg/core"
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -319,7 +318,7 @@ func main() {
 	router := gin.Default()
 
 	// router.SetTrustedProxies([]string{"localhost"})
-	router.Use(cors.Default())
+	// router.Use(cors.Default())
 
 	// router.Use(cors.New(cors.Config{
 	// 	AllowOrigins: []string{"http://ellescotz.github.io/graph_frontend"}, // Change this to the hosted React app's url.
