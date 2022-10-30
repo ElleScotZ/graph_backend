@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3'
 services:
   backend:
     container_name: graph-analysis-backend

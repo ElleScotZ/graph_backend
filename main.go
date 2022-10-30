@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"net/http"
 	"strconv"
 
 	"github.com/ellescotz/graph_backend/pkg/core"
@@ -321,7 +322,7 @@ func main() {
 	router.Use(cors.Default())
 
 	// router.Use(cors.New(cors.Config{
-	// 	AllowOrigins: []string{"http://ellescotz.github.io/graph_backend"}, // Change this to the hosted React app's url.
+	// 	AllowOrigins: []string{"http://ellescotz.github.io/graph_frontend"}, // Change this to the hosted React app's url.
 	// 	AllowMethods: []string{"POST, OPTIONS"},
 	// 	AllowHeaders: []string{"content-type"},
 	// 	// AllowCredentials: true,
@@ -339,5 +340,10 @@ func main() {
 	// Generating shoertest/longest paths
 	router.POST("/shortLong", getShortestLongestPath)
 
-	router.Run("graphbackend.herokuapp.com/")
+	// Ping test
+	router.GET("/ping", func(c *gin.Context) {
+		c.String(http.StatusOK, "pong")
+	})
+
+	router.Run("localhost:8080")
 }
