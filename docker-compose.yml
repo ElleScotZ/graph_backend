@@ -1,4 +1,20 @@
 version: '3'
+
+# resources:
+#   repositories:
+#   - repository: backend
+#     type: github
+#     endpoint: backendendServiceConnection
+#     name: https://github.com/ElleScotZ/graph_backend
+#   - repository: frontend
+#     type: github
+#     endpoint: frontendServiceConnection
+#     name: https://github.com/ElleScotZ/graph_frontend
+
+# steps:
+#   - checkout: backend
+#   - checkout: frontend
+      
 services:
   backend:
     container_name: graph-analysis-backend
@@ -7,16 +23,6 @@ services:
       context: .
     ports:
       - "8080:8080"
-    networks:
-      - fullstack
-
-  frontend:
-    container_name: graph-analysis-frontend
-    restart: on-failure
-    build:
-      context: "./frontend"
-    ports:
-      - "3000:3000"
     networks:
       - fullstack
 
