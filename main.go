@@ -334,7 +334,7 @@ func main() {
 	// gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 
-	// router.SetTrustedProxies([]string{"localhost"})
+	router.SetTrustedProxies([]string{"localhost"})
 	// router.Use(cors.Default())
 
 	// config := cors.DefaultConfig()
@@ -344,7 +344,7 @@ func main() {
 	// config.AllowCredentials = true
 	// router.Use(cors.New(config))
 
-	// router.Use(CORS())
+	router.Use(CORS())
 
 	// config.AllowAllOrigins = true
 
