@@ -332,7 +332,6 @@ func CORS() gin.HandlerFunc {
 
 func main() {
 	// gin.SetMode(gin.ReleaseMode)
-
 	router := gin.Default()
 
 	// router.SetTrustedProxies([]string{"localhost"})
@@ -374,5 +373,5 @@ func main() {
 		c.String(http.StatusOK, "pong")
 	})
 
-	router.Run("localhost:8080")
+	router.Run(":8080")
 }

@@ -1,6 +1,8 @@
 # The base go image
 FROM golang:latest
 
+ENV PORT=8080
+
 RUN mkdir /app
 
 # Copy files to the /app directory
@@ -13,7 +15,7 @@ RUN go mod download && go mod verify
 # Building a backend.exe in the /app directory
 RUN go build -o backend .
 
-EXPOSE 8080
+EXPOSE $PORT
 
 ENTRYPOINT [ "/app/backend" ]
 
