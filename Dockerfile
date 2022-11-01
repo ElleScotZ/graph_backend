@@ -17,5 +17,4 @@ EXPOSE 8080
 
 ENTRYPOINT [ "/app/backend" ]
 
-# # Run backend.exe
 # CMD go run main.go

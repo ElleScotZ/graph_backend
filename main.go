@@ -314,18 +314,48 @@ func getShortestLongestPath(c *gin.Context) {
 	c.JSON(200, relevantPaths)
 }
 
+func CORS() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, OPTIONS, PATCH")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+
+		c.Next()
+	}
+}
+
 func main() {
+	// gin.SetMode(gin.ReleaseMode)
+
 	router := gin.Default()
 
 	// router.SetTrustedProxies([]string{"localhost"})
 	// router.Use(cors.Default())
 
-	// router.Use(cors.New(cors.Config{
-	// 	AllowOrigins: []string{"http://ellescotz.github.io/graph_frontend"}, // Change this to the hosted React app's url.
+	// config := cors.DefaultConfig()
+	// config.AddAllowHeaders("Authorization")
+	// config.AddAllowMethods("POST, OPTIONS")
+	// config.AllowOrigins = []string{"http://localhost:3000"}
+	// config.AllowCredentials = true
+	// router.Use(cors.New(config))
+
+	// router.Use(CORS())
+
+	// config.AllowAllOrigins = true
+
+	// cors.New(cors.Config{
+	// 	AllowAllOrigins: true,
+	// 	// AllowOrigins: []string{"http://localhost:3000"}, // {"http://ellescotz.github.io/graph_frontend"}, // Change this to the hosted React app's url.
 	// 	AllowMethods: []string{"POST, OPTIONS"},
 	// 	AllowHeaders: []string{"content-type"},
 	// 	// AllowCredentials: true,
-	// }))
+	// })
 
 	// Generating all the paths with <= #steps
 	router.POST("/maxSteps", getPathsWithMaxSteps)
