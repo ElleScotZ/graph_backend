@@ -132,11 +132,6 @@ func (g *Graph) findPathOnGraphWithoutEdgeRepetition(node1, node2 Node,
 	if sumWeight := path.GetWeight(); (sumWeight <= maxWeight || maxWeight == -1) && len(path.Subgraph.Nodes) < maxLength {
 		// Walking further from node1 on every nonexcluded edge in g.
 		for i := range g.Edges {
-			// wG.Add(1)
-
-			// go func(i int) {
-			// 	defer wG.Done()
-
 			present, ok := excludeNodes.Load(g.Edges[i].Nodes[1])
 
 			if g.Edges[i].Nodes[0].Equals(node1) && (!ok || present == false) {
@@ -144,11 +139,8 @@ func (g *Graph) findPathOnGraphWithoutEdgeRepetition(node1, node2 Node,
 
 				g.findPathOnGraphWithoutEdgeRepetition(g.Edges[i].Nodes[1], node2, excludeNodes, path, paths, maxLength, maxWeight)
 			}
-			// }(i)
 		}
 	}
-
-	// wG.Wait()
 
 	// If every adjacent node is excluded, or there is no edge from node1,
 	// remove last node and edge from path.
