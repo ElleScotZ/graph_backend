@@ -1,7 +1,5 @@
 # graph_backend
 
-Project: Software Engineering
-
 Analysis tools between node1 and node2:
 
 - Generate paths with up to/exactly N edges
