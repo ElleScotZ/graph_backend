@@ -315,7 +315,7 @@ func getShortestLongestPath(c *gin.Context) {
 
 // cors enables middleware handling.
 // It connects frontend to backend with certain settings.
-// Backend application is allowed to be reached through the origin defined here.
+// Backend application is allowed to be reached from the origin defined here.
 func cors() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
