@@ -318,7 +318,7 @@ func getShortestLongestPath(c *gin.Context) {
 // Backend application is allowed to be reached from the origin defined here.
 func cors() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://34.76.180.95:3000")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "34.76.180.95:3000")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 
@@ -334,7 +334,7 @@ func cors() gin.HandlerFunc {
 func main() {
 	router := gin.Default()
 
-	router.SetTrustedProxies([]string{"http://34.76.180.95"})
+	router.SetTrustedProxies([]string{"34.76.180.95"})
 
 	router.Use(cors())
 
@@ -350,5 +350,5 @@ func main() {
 	// Generating shoertest/longest paths
 	router.POST("/shortLong", getShortestLongestPath)
 
-	router.Run("http://34.78.47.255:8080")
+	router.Run("34.78.47.255:8080")
 }
