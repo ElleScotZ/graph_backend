@@ -318,7 +318,7 @@ func getShortestLongestPath(c *gin.Context) {
 // Backend application is allowed to be reached from the origin defined here.
 func cors() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://34.76.180.95:3000")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://34.76.180.95")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 
