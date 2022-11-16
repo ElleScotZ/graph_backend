@@ -350,5 +350,5 @@ func main() {
 	// Generating shoertest/longest paths
 	router.POST("/shortLong", getShortestLongestPath)
 
-	router.Run(":8080")
+	router.Run("http://34.78.47.255::8080")
 }
